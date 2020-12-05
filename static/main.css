@@ -1,14 +1,14 @@
 body {
-    background-color: #3a4660;
-    margin-top: 100px;
-    margin-left: 10%;
+    background: #264653;
+    margin-top: 50px;
+    margin-left: 75px;
     margin-right: 10%;
   }
   
   h1 {
     margin-top: 20px;
     margin-bottom: 30px;
-    font-family: Averta, sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     color: #fff;
     font-size: 56px;
     line-height: 44px;
@@ -28,10 +28,27 @@ body {
   
   p {
     margin-bottom: 20px;
-    font-family: Averta, sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     color: #fff;
     font-size: 22px;
     line-height: 30px;
+  }
+
+  input {
+    width: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 15px;
+    color: #fff;
+    -webkit-transition: box-shadow .5s ease;
+	  -moz-transition: box-shadow .5s ease;
+	  -o-transition: box-shadow .5s ease;
+	  -ms-transition: box-shadow .5s ease;
+	  transition: box-shadow .5s ease;
   }
   
   a {
