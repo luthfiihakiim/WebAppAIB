@@ -13,6 +13,7 @@ body {
     font-size: 56px;
     line-height: 44px;
     font-weight: 700;
+    letter-spacing: 2px;
   }
   
   h2 {
@@ -32,49 +33,98 @@ body {
     color: #fff;
     font-size: 22px;
     line-height: 30px;
+    letter-spacing: 1px;
   }
 
-  input {
-    width: 100%;
-    font-family: 'Roboto Condensed', sans-serif;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.3);
-    border: none;
-    outline: none;
-    padding: 10px;
-    font-size: 15px;
-    color: #fff;
-    -webkit-transition: box-shadow .5s ease;
-	  -moz-transition: box-shadow .5s ease;
-	  -o-transition: box-shadow .5s ease;
-	  -ms-transition: box-shadow .5s ease;
-	  transition: box-shadow .5s ease;
+  form {
+    margin-top: 30px;
   }
-  
-  a {
-    -webkit-transition: border-color 200ms ease, color 200ms ease;
-    transition: border-color 200ms ease, color 200ms ease;
-    color: #fff;
-    text-decoration: none;
+
+  .row-wrap::after {
+    content: "";
+    display: table;
+    clear: both;
   }
-  
-  a:hover {
-    border-bottom-color: #1d2330;
-    color: #1d2330;
-  }
-  
-  a:focus {
-    border-bottom-color: #1d2330;
-    color: #1d2330;
-  }
-  
-  .content {
-    margin-top: 60px;
-  }
-  
-  .social-icon {
-    margin-top: 60px;
-    padding-right: 25px;
+
+  .input-box {
+    position: relative;
+    display: block;
     float: left;
-    border-bottom: 0px none #000;
+    margin-right: 20px;
+  }
+
+  .input-box input {
+    width: auto;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  .input-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .3s;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+
+  .input-box input:focus ~ label,
+  .input-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #ECF3F6;
+    font-size: 12px;
+  }
+
+  .button-submit {
+    border-radius: 4px;
+    display: inline-block;
+    *display: inline;
+    background-color: #ECF3F6;
+    border: none;
+    color: #264653;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .button-submit span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button-submit span::after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button-submit:hover span {
+    padding-right: 25px;
+  }
+
+  .button-submit:hover span::after {
+    opacity: 1;
+    right: 0;
   }

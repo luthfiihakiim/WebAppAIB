@@ -10,10 +10,68 @@
         <div>
           <h1>Price Prediction</h1>
           <p>Artificial Intelligence for Business (AIB) Project.</p>
+          
+          <form action="{{ url_for('predict') }}" method="post">
+            <div class="row-wrap">
+              <div class="input-box">
+                <input type="text" name="bedrooms", required="required">
+                <label>Bedrooms</label>
+              </div>
+              <div class="input-box">
+                <input type="text" name="bathrooms", required="required">
+                <label>Bathrooms</label>
+              </div>
+            </div>
+            <div class="row-wrap">
+              <div class="input-box">
+                <input type="text" name="buildingarea", required="required">
+                <label>Building Area</label>
+              </div>
+              <div class="input-box">
+                <input type="text" name="landarea", required="required">
+                <label>Land Area</label>
+              </div>
+              <div class="input-box">
+                <input type="text" name="floor", required="required">
+                <label>Number of Floor</label>
+              </div>
+            </div>
 
-          <form method="post">
-            <input type="text" name="rate" placeholder="Rate" required="required"/>
+            <div class="row-wrap">
+              <div class="input-box">
+                <input type="text" name="condition", required="required">
+                <label>Condition</label>
+              </div>
+              <div class="input-box">
+                <input type="text" name="grade", required="required">
+                <label>Grade</label>
+              </div>
+            </div>
+
+            <div class="row-wrap">
+              <div class="input-box">
+                <input type="text" name="nbarea", required="required">
+                <label>Non-Basement Area</label>
+              </div>
+              <div class="input-box">
+                <input type="text" name="barea", required="required">
+                <label>Basement Area</label>
+              </div>
+            </div>
+
+            <div class="row-wrap">
+              <div class="input-box">
+                <input type="text" name="latitude", required="required">
+                <label>Latitude</label>
+              </div>
+              <div class="input-box">
+                <input type="text" name="longitude", required="required">
+                <label>Longitude</label>
+              </div>
+            </div>
+            <button type="submit" class="button-submit"><span>Predict </span></button>
           </form>
+          <p> {{ prediction_text }} </p>
       </div>
     </body>
 </html>
