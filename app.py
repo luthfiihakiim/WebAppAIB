@@ -10,15 +10,17 @@ model = pickle.load(open('model.pkl', 'rb'))
 def home():
     return render_template('home.html')
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['POST', 'GET'])
 def predict():
-    
-    features = [x for x in request.form.values()]
-    final_features = [np.array(features)]
-    result = model.predict(final_features)
-    result = round(result[0], 2)
+    if request.method == 'GET':
+        return render_template('home.html')
+    else:
+        features = [x for x in request.form.values()]
+        final_features = [np.array(features)]
+        result = model.predict(final_features)
+        result = round(result[0], 2)
 
-    return render_template('home.html', prediction_text= 'Price should be $ {}'.format(result))
+        return render_template('home.html', prediction_text= 'Price should be $ {}'.format(result))
 
 if __name__ == '__main__':
     app.run(debug=True)
