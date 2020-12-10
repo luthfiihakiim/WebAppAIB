@@ -14,58 +14,58 @@
           <form action="{{ url_for('home') }}" method="post">
             <div class="row-wrap">
               <div class="input-box">
-                <input type="text" name="bedrooms", required="required">
+                <input type="number" name="bedrooms" required="required" value="{{ request.form['bedrooms'] }}">
                 <label>Bedrooms</label>
               </div>
               <div class="input-box">
-                <input type="text" name="bathrooms", required="required">
+                <input type="number" name="bathrooms" required="required" value="{{ request.form['bathrooms'] }}">
                 <label>Bathrooms</label>
               </div>
             </div>
             <div class="row-wrap">
               <div class="input-box">
-                <input type="text" name="buildingarea", required="required">
-                <label>Building Area</label>
+                <input type="number" step="any" name="buildingarea" required="required" value="{{ request.form['buildingarea'] }}">
+                <label>Building Area (ft&#178)</label>
               </div>
               <div class="input-box">
-                <input type="text" name="landarea", required="required">
-                <label>Land Area</label>
+                <input type="number" step="any" name="landarea" required="required" value="{{ request.form['landarea'] }}">
+                <label>Land Area (ft&#178)</label>
               </div>
               <div class="input-box">
-                <input type="text" name="floor", required="required">
+                <input type="number" step="0.1" name="floor" required="required" value="{{ request.form['floor'] }}">
                 <label>Number of Floor</label>
               </div>
             </div>
 
             <div class="row-wrap">
               <div class="input-box">
-                <input type="text" name="condition", required="required">
-                <label>Condition</label>
+                <input type="number" min="1" max="5" name="condition" required="required" value="{{ request.form['condition'] }}">
+                <label>Condition (1-5)</label>
               </div>
               <div class="input-box">
-                <input type="text" name="grade", required="required">
-                <label>Grade</label>
-              </div>
-            </div>
-
-            <div class="row-wrap">
-              <div class="input-box">
-                <input type="text" name="nbarea", required="required">
-                <label>Non-Basement Area</label>
-              </div>
-              <div class="input-box">
-                <input type="text" name="barea", required="required">
-                <label>Basement Area</label>
+                <input type="number" min="1" max="13" name="grade" required="required" value="{{ request.form['grade'] }}">
+                <label>Grade (1-13)</label>
               </div>
             </div>
 
             <div class="row-wrap">
               <div class="input-box">
-                <input type="text" name="latitude", required="required">
+                <input type="number" step="any" name="nbarea" required="required" value="{{ request.form['nbarea'] }}">
+                <label>Non-Basement Area (ft&#178)</label>
+              </div>
+              <div class="input-box">
+                <input type="number" step="any" name="barea" required="required" value="{{ request.form['barea'] }}">
+                <label>Basement Area (ft&#178)</label>
+              </div>
+            </div>
+
+            <div class="row-wrap">
+              <div class="input-box">
+                <input type="number" min="" max="" step="any" name="latitude" required="required" value="{{ request.form['latitude'] }}">
                 <label>Latitude</label>
               </div>
               <div class="input-box">
-                <input type="text" name="longitude", required="required">
+                <input type="number" min="" max="" step="any" name="longitude" required="required" value="{{ request.form['longitude'] }}">
                 <label>Longitude</label>
               </div>
             </div>

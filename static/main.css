@@ -54,7 +54,7 @@ body {
   }
 
   .input-box input {
-    width: auto;
+    width: 175px;
     padding: 10px 0;
     font-size: 16px;
     color: #fff;
@@ -84,6 +84,13 @@ body {
     top: -20px;
     left: 0;
     color: #ECF3F6;
+    font-size: 12px;
+  }
+
+  .input-box input:out-of-range ~ label {
+    top: -20px;
+    left: 0;
+    color: #d62828;
     font-size: 12px;
   }
 
